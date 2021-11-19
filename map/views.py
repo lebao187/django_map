@@ -88,40 +88,40 @@ def index(request):
 
                         <li>ID:{id2} </li>
                         <li>Nắp cống: {tt2}</li>
-                        <li>Bên ngoài: {benngoai2} mm</li>
-                        <li>Bên trong: {bentrong2} mm</li>
-                        <li>Lượng mưa: {luongmua2} mm</li>
+                        <li>Bên ngoài: {benngoai2} cm</li>
+                        <li>Bên trong: {bentrong2} cm</li>
+                        <li>Lượng mưa: {luongmua2} cm</li>
                         <li>Vi trí: {kinhdo2} , {vido2}</li>  
                     </p>
                     """
-    if bentrong1 >130:
+    if bentrong1 >30:
         html3 = f"""
-               <a  href="/"><img src="https://thuviendohoa.vn/upload/images/items/logo-than-trong-bieu-tuong-canh-bao-tam-giac-vang-dau-cham-than-png-382.webp" width="80px" ,="" height="80px"></a><b> Mực nước trong cống 1 quá ngưỡng</b>
+               <a  href="/"><img src="https://thuviendohoa.vn/upload/images/items/logo-than-trong-bieu-tuong-canh-bao-tam-giac-vang-dau-cham-than-png-382.webp" width="80px" ,="" height="80px"></a><b> Mực nước trong cống 1 quá ngưỡng </b>
                 
                        """
-    if bentrong1 <=130:
+    if bentrong1 <=30:
         html3 = f""" """
-    if bentrong2 > 300:
+    if bentrong2 > 30:
         html4 = f"""
-                       <h1>&emsp;&emsp;<a  href="/"><img src="https://thuviendohoa.vn/upload/images/items/logo-than-trong-bieu-tuong-canh-bao-tam-giac-vang-dau-cham-than-png-382.webp" width="100px" ,="" height="100px"></a></h1>
-
-                               """
-    if bentrong2 <= 300:
+                  <a  href="/"><img src="https://thuviendohoa.vn/upload/images/items/logo-than-trong-bieu-tuong-canh-bao-tam-giac-vang-dau-cham-than-png-382.webp" width="80px" ,="" height="80px"></a><b> Mực nước trong cống 2 quá ngưỡng </b>
+                
+                       """
+    if bentrong2 <= 30:
         html4 = f""" """
 
     iframe2 = folium.IFrame(html=html2, width=200, height=200)
     popup2 = folium.Popup(iframe2, max_width=2650)
-    if  benngoai1 < 100:
-        mau1='green'
-    if 100<= benngoai1 < 200:
+    if  bentrong1 < 10:
         mau1='blue'
-    if benngoai1 >= 200 :
+    if 15<= bentrong1 < 25:
+        mau1='green'
+    if bentrong1 >= 30 :
         mau1='red'
-    if  benngoai2 < 100:
-        mau2='green'
-    if 100<= benngoai2 < 200:
+    if  bentrong2 < 10:
         mau2='blue'
-    if benngoai2 >= 200 :
+    if 15<= bentrong2 < 25:
+        mau2='green'
+    if benngoai2 >= 30 :
         mau2='red'
 
     NODE1 = folium.Marker(
