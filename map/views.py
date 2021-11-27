@@ -69,7 +69,7 @@ def index(request):
     if trangthai2 == 1:
         tt2 = "Mở"
     else: tt2="Đóng"
-    m = folium.Map(location=[(kinhdo1+kinhdo2)/2, (vido1+vido2)/2], zoom_start=4)
+    m = folium.Map(location=[(kinhdo1+kinhdo2)/2, (vido1+vido2)/2], zoom_start=17)
     html1 = f"""
                 <h1> {"Cống 1"}</h1>
 
